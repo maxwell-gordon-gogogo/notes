@@ -1,11 +1,16 @@
-import React from "react";
-import "./style.css";
+import React from 'react';
+import Note from './components/Note';
+import './style.css';
 
-export default function App() {
+export default function App({ notes }) {
   return (
     <div>
-      <h1>Hello StackBlitz!</h1>
-      <p>Start editing to see some magic happen :)</p>
+      <h1>Notes</h1>
+      <ul>
+        {notes.map((note) => (
+          <Note note={note} />
+        ))}
+      </ul>
     </div>
   );
 }
